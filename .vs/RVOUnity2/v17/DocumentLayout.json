@@ -1,0 +1,198 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\RVOUnity2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|d:\\rvounity2\\assets\\scripts\\spheremanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spheremanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|d:\\rvounity2\\assets\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|D:\\RVOUnity2\\assets\\scripts\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|D:\\RVOUnity2\\assets\\scripts\\agent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\agent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|D:\\RVOUnity2\\assets\\scripts\\simulator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\simulator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|D:\\RVOUnity2\\assets\\scripts\\circle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\circle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|D:\\RVOUnity2\\assets\\scripts\\vector2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\vector2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|D:\\RVOUnity2\\assets\\scripts\\rvomath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rvomath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|D:\\RVOUnity2\\assets\\scripts\\obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\obstacle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|D:\\RVOUnity2\\assets\\scripts\\line.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\line.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|D:\\RVOUnity2\\assets\\scripts\\kdtree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0D203D6-24D2-AEFD-B0CA-28D8B27F02EF}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\kdtree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CameraController.cs",
+              "DocumentMoniker": "D:\\RVOUnity2\\Assets\\Scripts\\CameraController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CameraController.cs",
+              "ToolTip": "D:\\RVOUnity2\\Assets\\Scripts\\CameraController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CameraController.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAADwvxoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T07:45:20.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SphereManager.cs",
+              "DocumentMoniker": "D:\\RVOUnity2\\Assets\\Scripts\\SphereManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SphereManager.cs",
+              "ToolTip": "D:\\RVOUnity2\\Assets\\Scripts\\SphereManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SphereManager.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAUwEEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-14T07:37:47.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Block.cs",
+              "DocumentMoniker": "D:\\RVOUnity2\\Assets\\Scripts\\Block.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Block.cs",
+              "ToolTip": "D:\\RVOUnity2\\Assets\\Scripts\\Block.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Block.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAQwEAAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T08:10:54.391Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Circle.cs",
+              "DocumentMoniker": "D:\\RVOUnity2\\Assets\\Scripts\\Circle.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Circle.cs",
+              "ToolTip": "D:\\RVOUnity2\\Assets\\Scripts\\Circle.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Circle.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAUwD4AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T01:41:46.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Vector2.cs",
+              "DocumentMoniker": "D:\\RVOUnity2\\Assets\\Scripts\\Vector2.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Vector2.cs",
+              "ToolTip": "D:\\RVOUnity2\\Assets\\Scripts\\Vector2.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Vector2.cs",
+              "ViewState": "AQIAAKoAAAAAAAAAAAAkwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T12:26:00.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RVOMath.cs",
+              "DocumentMoniker": "D:\\RVOUnity2\\Assets\\Scripts\\RVOMath.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\RVOMath.cs",
+              "ToolTip": "D:\\RVOUnity2\\Assets\\Scripts\\RVOMath.cs",
+              "RelativeToolTip": "Assets\\Scripts\\RVOMath.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T12:25:34.472Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Obstacle.cs",
+              "DocumentMoniker": "D:\\RVOUnity2\\Assets\\Scripts\\Obstacle.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Obstacle.cs",
+              "ToolTip": "D:\\RVOUnity2\\Assets\\Scripts\\Obstacle.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Obstacle.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAADwvyAAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T12:19:37.945Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Line.cs",
+              "DocumentMoniker": "D:\\RVOUnity2\\Assets\\Scripts\\Line.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Line.cs",
+              "ToolTip": "D:\\RVOUnity2\\Assets\\Scripts\\Line.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Line.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACAAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-23T12:17:16.545Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "KDTree.cs",
+              "DocumentMoniker": "D:\\RVOUnity2\\Assets\\Scripts\\KDTree.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\KDTree.cs",
+              "ToolTip": "D:\\RVOUnity2\\Assets\\Scripts\\KDTree.cs",
+              "RelativeToolTip": "Assets\\Scripts\\KDTree.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T11:53:12.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Agent.cs",
+              "DocumentMoniker": "D:\\RVOUnity2\\Assets\\Scripts\\Agent.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Agent.cs",
+              "ToolTip": "D:\\RVOUnity2\\Assets\\Scripts\\Agent.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Agent.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAQwEUAAABVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T11:51:21.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Simulator.cs",
+              "DocumentMoniker": "D:\\RVOUnity2\\Assets\\Scripts\\Simulator.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Simulator.cs",
+              "ToolTip": "D:\\RVOUnity2\\Assets\\Scripts\\Simulator.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Simulator.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAADwvyYAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-20T11:50:26.969Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
