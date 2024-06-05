@@ -1,78 +1,182 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using RVO;
+using RVOVector2 = RVO.Vector2; // 为RVO的Vector2添加别名
+using UnityVector2 = UnityEngine.Vector2; // 为Unity的Vector2添加别名
+using System.Collections.Generic;
 
 public class Agent : MonoBehaviour
 {
-    public Vector2 position;
-    public Vector2 velocity;
-    private IList<Vector2> neighbors = new List<Vector2>();
-    private Vector2 goal;
-    private float neighborDist = 15.0f;
-    //private int maxNeighbors = 10;
-    //private float timeHorizon = 5.0f;
-    //private float radius = 0.5f;
-    private float maxSpeed = 2.0f;
+    private int agentIndex;
+    private Vector3 targetPosition;
+    private float speed;
+    private bool hasReachedTarget = false;
+    private bool isFinalPosition = false;
 
-    private void Awake()
+    // 视野相关参数
+    public float visionAngle = 170f; // 视野角度
+    public float visionRadius = 5f; // 视野半径
+    private List<Vector3> neighborsPositions = new List<Vector3>(); // 记录邻居的位置
+
+    private Vector3 neighborPreviousPosition; // 邻居之前的位置
+    private Vector3 neighborCurrentPosition; // 邻居当前的位置
+    private float timeInterval; // 时间间隔
+
+    // 身高和性别
+    public float height;
+    public bool isMale;
+
+    public void Initialize(int index, Vector3 target, float agentSpeed, float agentHeight, bool agentIsMale)
     {
-        //GameObject gameObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        
-        gameObject.transform.parent = transform;
-        gameObject.transform.localScale = Vector3.one * 0.1f;
+        agentIndex = index;
+        targetPosition = target;
+        speed = agentSpeed;
+        height = agentHeight;
+        isMale = agentIsMale;
+
+        RVOVector2 direction = Normalize(new RVOVector2(targetPosition.x, targetPosition.z) - Simulator.Instance.getAgentPosition(agentIndex));
+        RVOVector2 initialVelocity = direction * speed;
+        Simulator.Instance.setAgentVelocity(agentIndex, initialVelocity);
     }
 
-    void Start()
+    public List<Vector3> GetNeighborsPositions()
     {
-        position = new Vector2(transform.position.x, transform.position.y);
-        goal = position;  // Assume goal is initially set to current position
+        return neighborsPositions;
+    }
+
+    public Vector3 GetPreferredVelocity()
+    {
+        RVOVector2 prefVelocity = Simulator.Instance.getAgentPrefVelocity(agentIndex);
+        return new Vector3(prefVelocity.x(), 0, prefVelocity.y());
+    }
+
+    public RVOVector2 GetAgentPosition()
+    {
+        return Simulator.Instance.getAgentPosition(agentIndex);
+    }
+
+    public RVOVector2 GetAgentVelocity()
+    {
+        return Simulator.Instance.getAgentVelocity(agentIndex);
+    }
+
+    public void SetAgentPrefVelocity(RVOVector2 prefVelocity)
+    {
+        Simulator.Instance.setAgentPrefVelocity(agentIndex, prefVelocity);
+    }
+
+    RVOVector2 Normalize(RVOVector2 v)
+    {
+        float magnitude = Mathf.Sqrt(v.x() * v.x() + v.y() * v.y());
+        if (magnitude > 0)
+        {
+            return new RVOVector2(v.x() / magnitude, v.y() / magnitude);
+        }
+        return new RVOVector2(0, 0);
+    }
+
+    float RVOVector2Magnitude(RVOVector2 v)
+    {
+        return Mathf.Sqrt(v.x() * v.x() + v.y() * v.y());
     }
 
     void Update()
     {
-        ComputeNewVelocity();
-        Move();
+        if (!isFinalPosition)
+        {
+            RVOVector2 target2D = new RVOVector2(targetPosition.x, targetPosition.z);
+            RVOVector2 position2D = Simulator.Instance.getAgentPosition(agentIndex);
+
+            if (!hasReachedTarget)
+            {
+                // Compute desired velocity towards target
+                RVOVector2 desiredVelocity = Normalize(target2D - position2D) * speed;
+                SetAgentPrefVelocity(desiredVelocity);
+
+                // Check if the agent reached its target
+                if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
+                {
+                    hasReachedTarget = true;
+                }
+            }
+            else
+            {
+                // 继续使用RVO进行避碰，但速度很低
+                RVOVector2 desiredVelocity = Normalize(target2D - position2D) * (speed * 0.1f);
+                SetAgentPrefVelocity(desiredVelocity);
+
+                // 检查智能体是否稳定在目标位置
+                if (Vector3.Distance(transform.position, targetPosition) < 0.1f && RVOVector2Magnitude(desiredVelocity) < 0.01f)
+                {
+                    isFinalPosition = true;
+                    SetAgentPrefVelocity(new RVOVector2(0, 0));
+                }
+            }
+
+            // 更新视野
+            UpdateVision();
+        }
     }
 
-    public void ComputeNewVelocity()
+    void UpdateVision()
     {
-        Vector2 newVelocity = Vector2.zero;
-        if (neighbors.Count > 0)
+        if (isFinalPosition)
+            return;
+
+        // 获取视野范围内的邻居
+        neighborsPositions.Clear();
+        Collider[] hits = Physics.OverlapSphere(transform.position, visionRadius);
+        RVOVector2 velocity2D = GetAgentVelocity();
+        Vector3 velocity = new Vector3(velocity2D.x(), 0, velocity2D.y());
+
+        foreach (var hit in hits)
         {
-            foreach (var neighbor in neighbors)
+            if (hit.gameObject != this.gameObject)
             {
-                Vector2 dirToNeighbor = neighbor - position;
-                if (dirToNeighbor.sqrMagnitude < neighborDist * neighborDist)
+                Vector3 directionToNeighbor = hit.transform.position - transform.position;
+                float angle = Vector3.Angle(velocity, directionToNeighbor);
+                if (angle <= visionAngle / 2)
                 {
-                    newVelocity -= dirToNeighbor.normalized * maxSpeed;
+                    neighborsPositions.Add(hit.transform.position);
                 }
             }
         }
-        Vector2 dirToGoal = (goal - position).normalized;
-        newVelocity += dirToGoal * maxSpeed;
-
-        velocity = Vector2.ClampMagnitude(newVelocity, maxSpeed);
     }
 
-    private void Move()
+    void OnDrawGizmos()
     {
-        transform.position += new Vector3(velocity.x, 0, velocity.y) * Time.deltaTime;
+        if (Simulator.Instance == null || agentIndex >= Simulator.Instance.getNumAgents())
+        {
+            return;
+        }
+
+        // 可视化运动的正前方
+        RVOVector2 velocity2D = GetAgentVelocity();
+        Vector3 velocity = new Vector3(velocity2D.x(), 0, velocity2D.y());
+
+        Gizmos.color = Color.green;
+        Vector3 forward = velocity.normalized * 2.0f; // 使用一条短的射线表示正前方
+        Gizmos.DrawLine(transform.position, transform.position + forward);
     }
 
-    public void SetGoal(Vector2 newGoal)
+    // 计算步长的函数
+    public float CalculateStepLength(float height, bool isMale)
     {
-        goal = newGoal;
+        float k = isMale ? 0.415f : 0.413f;
+        return k * height;
     }
 
-    // Adding missing methods
-    public void UpdatePosition()
+    // 估算步频的函数
+    public float EstimateStepFrequency(Vector3 previousPosition, Vector3 currentPosition, float stepLength, float timeInterval)
     {
-        transform.position += new Vector3(velocity.x, 0,velocity.y) * Time.deltaTime;
+        float distance = Vector3.Distance(previousPosition, currentPosition);
+        return distance / (stepLength * timeInterval);
     }
 
-    public void Initialize(Vector2 initialPosition)
+    // 计算邻居速度的函数
+    public Vector3 EstimateNeighborVelocity(Vector3 previousPosition, Vector3 currentPosition, float height, bool isMale, float timeInterval)
     {
-        position = initialPosition;
-        transform.position = new Vector3(position.x, position.y, 0);
+        float stepLength = CalculateStepLength(height, isMale);
+        float stepFrequency = EstimateStepFrequency(previousPosition, currentPosition, stepLength, timeInterval);
+        return stepFrequency * stepLength * (currentPosition - previousPosition).normalized;
     }
 }

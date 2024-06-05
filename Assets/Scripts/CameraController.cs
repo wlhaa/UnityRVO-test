@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public Transform target;
-    public float height = 50.0f;  // 相机高度
+    public float height = 90.0f;  // 相机高度
 
     void Start()
     {
@@ -24,4 +24,3 @@ public class CameraController : MonoBehaviour
         }
     }
 }
-
